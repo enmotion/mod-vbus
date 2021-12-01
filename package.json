@@ -1,0 +1,40 @@
+{
+  "name": "mod-vbus",
+  "version": "0.0.1",
+  "description": "mqtt topic vue eventbus",
+  "main": "./src/index.js",
+  "scripts": {
+    "build": "npx webpack",
+    "test": "npx webpack --watch"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/enmotion/mod-vbus.git"
+  },
+  "keywords": [
+    "vue",
+    "eventbus",
+    "mqtt",
+    "topic"
+  ],
+  "author": "enmotion",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/enmotion/mod-vbus/issues"
+  },
+  "homepage": "https://github.com/enmotion/mod-vbus#readme",
+  "dependencies": {
+    "mqtt-match": "^2.0.3",
+    "ramda": "^0.27.1",
+    "vue": "^2.6.14"
+  },
+  "devDependencies": {
+    "chai": "^4.2.0",
+    "clean-webpack-plugin": "^3.0.0",
+    "mocha": "^8.2.1",
+    "terser-webpack-plugin": "^4.1.0",
+    "webpack": "^4.44.1",
+    "webpack-cli": "^4.2.0",
+    "webpack-dev-server": "^3.11.0"
+  }
+}
