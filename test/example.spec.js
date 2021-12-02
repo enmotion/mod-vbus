@@ -10,3 +10,7 @@ componentB.on(function(event){
 componentA.on(function(event){
     console.log('componentA',event)
 })
+setTimeout(function(){
+    componentB.dispose()
+    componentA.pub('/compos/componentB',{msg:"hello componentB2"});
+})
