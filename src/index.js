@@ -4,7 +4,7 @@
 * version:1.0.0
 */
 import Vue from "vue";
-import * as matcher from "mqtt-match"; //mqtt topic 规则检测器
+import matcher from "mqtt-match"; //mqtt topic 规则检测器
 import * as R from "ramda";
 const singletonBusInstance = new Vue();//bus单例
 
