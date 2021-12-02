@@ -70,15 +70,24 @@ export default function(holder,defaultSubTopics){
         }
     }
     function hasHolder(holder){
-        if([String,Object].includes(holder.constructor)){return true}
-        throw new Error("ERROR: create method must has prop [holder] as String or Array");
+        if([String,Object].includes(holder && holder.constructor)){return true}
+        throw new Error("ERROR: new method must be has prop [holder] as String or Object");
+    }
+    function dispose(){
+        busInstance.$off("busOnTrigged",onMessage);
+        busInstance = null;
+        holder = null;
+        defaultSubTopics = null;
+        subTopics = null;
+        callback = null
     }
     return Object.defineProperties({},{
-        $bus:{writable:false,configurable:false,enumerable:false,value:busInstance},
+        $bus:{configurable:false,enumerable:false,get:function(){return busInstance}},
         $topics:{configurable:false,enumerable:false,get:function(){return [...defaultSubTopics,...subTopics]}},
         sub:{writable:false,configurable:false,enumerable:false,value:sub},
         unsub:{writable:false,configurable:false,enumerable:false,value:unsub},
         pub:{writable:false,configurable:false,enumerable:false,value:pub},
         on:{writable:false,configurable:false,enumerable:false,value:on},
+        dispose:{writable:false,configurable:false,enumerable:false,value:dispose}
     })
 }

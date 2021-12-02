@@ -1,2 +1,2 @@
 # mod-vbus
-base on mqtt topic sub&amp;pub principle eventbus
+based on mqtt topic sub&amp;pub principle, eventbus design for components
